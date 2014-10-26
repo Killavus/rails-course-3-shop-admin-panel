@@ -1,0 +1,14 @@
+<h1>Welcome in my shop!</h1>
+
+<p><%= link_to "Manage products", products_path %></p>
+<p><%= link_to "Manage categories", categories_path %></p>
+<p>Here are my products:</p>
+
+<% categories.each do |category| %>
+<h2><%= category.name %></h2>
+<ul>
+  <%= category.products.each do |product| %>
+  <li><%= product.name %> <%= present_product_price(product.price) %> <%= link_to "[Show]", product_path(product) %></li>
+  <% end %>
+</ul>
+<% end %>
