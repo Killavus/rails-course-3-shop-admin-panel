@@ -7,7 +7,7 @@
 <% categories.each do |category| %>
 <h2><%= category.name %></h2>
 <ul>
-  <%= category.products.each do |product| %>
+  <% category.products.each do |product| %>
   <li><%= product.name %> <%= present_product_price(product.price) %> <%= link_to "[Show]", product_path(product) %></li>
   <% end %>
 </ul>

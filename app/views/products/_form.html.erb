@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= select(:product, :category_id, @categories.map { |category| [category.name, category.id] }) %>
   </div>
   <div class="actions">
     <%= f.submit %>
